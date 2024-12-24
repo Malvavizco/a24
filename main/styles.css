@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+/* Estilo general para el contenedor */
+.split-page {
+    display: flex;
+    flex-direction: row; /* Mantiene las dos secciones en línea horizontal */
+    width: 100%;
+    height: 92vh; /* Ocupa toda la altura de la pantalla */
+    overflow: hidden;
+}
+
+/* Sección izquierda */
+.left-section {
+    width: 55%; /* Ocupa la mitad izquierda */
+    position: relative; /* Necesario para aplicar el clip-path */
+    clip-path: polygon(0 0,76% 0, 100% 100%, 0% 100%); /* Efecto romboide */
+    background-color: #f4f4f4; /* Fondo para prueba */
+    z-index: 2; /* Mantiene la sección izquierda al frente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta cualquier contenido desbordado */
+    top: 0px;
+    left: 0px;
+}
+
+.static-image {
+    width: 100%;
+    height: 100vh;
+    object-fit:cover; /* La imagen se ajusta sin distorsionarse */
+}
+
+/* Sección derecha */
+.right-section {
+    width: 70%; /* Ocupa la mitad derecha */
+    position: absolute; /* Asegura que esté al fondo */
+    top: 0;
+    left: 30%;
+    height: 108vh;
+    z-index: 1; /* Envía la sección al fondo */
+    overflow: hidden; /* Evita que el carrusel sobresalga */
+}
+
+/* Carrusel */
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Empieza desde la mitad derecha */
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%); /* Centra el contenido del carrusel */
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 40%; 
+    left: 40%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    z-index: 10; 
+}
+
+/* Imagen PNG */
+.overlay-image {
+    max-width: 85%; 
+    margin-bottom: 20px; 
+}
+
+/* Botón */
+.info-button {
+    background-color: rgba(107, 182, 243, 0.8); /* Fondo semi-transparente */
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 7;
+}
+
+.info-button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Cambia color al hacer hover */
+    color: black;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #333;
+    background: linear-gradient(to bottom, #333333, #000000);
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+}
+
+.navbar .logo img {
+    height: 60px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f4a261;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 1px;
+    padding: 05px 0;
+    list-style: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    padding: 10px 20px;
+    display: block;
+    color: white;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: #555;
+}
+
+/* Mostrar dropdown en hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+/*Formcion de numerologia */
+.image-container {
+    position: relative; 
+    width: 99vh; 
+    height: 93vh;
+    top: 0px;
+}
+
+.imagen {
+    position: absolute;  
+    top: 0px;  
+    left: 0;  
+    width: 207vh;  
+    height: 93vh;  
+    object-fit: fill; 
+    opacity: 0.8; 
+}
+.foto{
+    position: absolute;
+    top: 10%;
+    left: 13%;
+    width: 116%;
+    height: 71%;
+    object-fit: cover;
+    clip-path: polygon(0 0,100% 0, 77% 100%, 0% 100%);
+    border-top: 5px solid #fff;   
+    border-left: 5px solid #fff;   
+    border-bottom: 5px solid #fff; 
+    border-right: none; 
+    border-radius: 4px;
+    transition: opacity 1s ease-out;
+}
+.hidden {
+    opacity: 0;
+    pointer-events: none; /* No interactuar con elementos ocultos */
+  }
+.text-box {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    text-align:start;
+    white-space:pre-wrap;
+    font-size: medium;
+  }
+.text-box.active {
+    display: block;
+    animation: fadeIn 1s ease-out forwards;
+    position: absolute;
+    top: 0%;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+.forma-button {
+    background-color: rgba(255,224,178,255); /* Fondo semi-transparente */
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 7;
+    position: absolute;
+    top: 67%;
+    right: 12%;
+}
+.forma-button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Cambia color al hacer hover */
+    color: black;
+}
+.forma-text{
+    position: absolute;
+    top: 35%;
+    right: 3%;
+    width: 30%;
+    height: 60%;
+    text-align: center;
+    white-space:pre-wrap;
+    font-size:larger;
+}
+/* Responsividad */
+@media screen and (max-width: 390px) {
+    .split-page {
+        flex-direction: column; /* Apila las secciones en pantallas pequeñas */
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        height: 50%; /* Ambas secciones ocupan la mitad vertical */
+        clip-path: none; /* Desactiva el efecto romboide en pantallas pequeñas */
+    }
+
+    .carousel {
+        left: 0; /* Asegura que el carrusel se ajuste en pantallas pequeñas */
+        transform: translateX(0);
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .dropdown-menu a {
+        text-align: left;
+    }
+}

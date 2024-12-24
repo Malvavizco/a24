@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formacion de Numerologia</title>
+    <link rel="icon" href="../media/ESTRELLA ESCUELA DE NUMEROLOGIA.png">
+    <link rel="stylesheet" href="../main/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../media/ESTRELLA ESCUELA DE NUMEROLOGIA.png" alt="Logo" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="FNumero.html">Formación de Numerología</a>
+                    
+                </li>
+                <li><a href="#viajaconjm">Viaja con Javier Mujica</a></li>
+                <li class="dropdown">
+                    <a href="#">Eventos Especiales</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#evento1">Año Nuevo Chino 2025</a></li>
+                        <li><a href="#evento2">Monólogo: No pasa nada</a></li>
+                        <li><a href="#evento3">7mo Encuentro de Numerología</a></li>
+                    </ul>
+                </li>
+                <li><a href="#consultas">Consultas Personales</a></li>
+                <li><a href="#zona-estudiantes">Zona de Estudiantes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="image-container">
+            <img class="imagen" src="../media/FONDO PAGINA FORMACION NUMEROLOGICA.jpg" alt="Imagen 1">
+            <img id="image" class="foto" src="../media/FOTO PRINCIPAL FORMACION NUMEROLÓGICA.jpeg" alt="Imagen 2">
+            <img class="imagen" src="../media/FONDO MEDIA PAGINA CON BARRA FORMACION NUMEROLOGICA.png" alt="Imagen 3">
+    </div>
+    <button id="actionButton" class="forma-button">Más informacion aqui</button>
+    <p class="forma-text">Conoce el verdadero significado de los números a través de nuestras Formaciones de Numerología en las siguientes ciudades:<br>
+        •Caracas   •Margarita   •Barquisimeto   •Maracay   •Lecheria   •Madrid   •Bogotá</p>
+    <div class="text-box" id="textBox">
+            <h2>  Formacion de Numerologia</h2>
+            <p>
+            <b>    Nivel 1:
+                Simbología, vibración y arquetipos de los números.
+                Cálculo numérico de la fecha de nacimiento,
+                Análisis e interpretación de los números resultantes de la fecha de nacimiento. 
+                Interpretación de los aspectos emocionales, económicos, pasionales, profesionales, salud y 
+                personalidad inmersos en la fecha de nacimiento.
+                
+                Nivel 2:
+                Cálculo e interpretación de la Proyección Numérica de la fecha de nacimiento.
+                Proyección Numérica anual y mes a mes, cálculo e interpretación.
+                Análisis de la proyección numérica en los aspectos: emocional, económico, 
+                relación personal, pasional, profesional y salud.
+                
+                Nivel 3:
+                Interpretación del alfabeto alpha numérico.
+                Cálculo e interpretación de la vibración del nombre.
+                Interpretación de los aspectos resultantes del cálculo numérico
+                del nombre completo.
+                Cálculo de la esencia personal, Karma y herramienta numérica.
+                
+                Nivel 4:
+                Vibración numérica en las relaciones interpersonales.
+                Compatibilidad de pareja.
+                Cálculo, análisis e interpretación de los diferentes aspectos de las relaciones 
+                de pareja.
+                Proyección numérica anual y mes a mes de la vibración de las relaciones. 
+                Interpretación de la proyección numérica en pareja.</b></p>
+          </div>
+
+          <script>
+            const button = document.getElementById('actionButton');
+            const image = document.getElementById('image');
+            const textBox = document.getElementById('textBox');
+        
+            button.addEventListener('click', () => {
+              // Oculta la imagen con animación
+              image.classList.add('hidden');
+        
+              // Espera a que termine la animación (1s) y luego muestra el cuadro de texto
+              setTimeout(() => {
+                textBox.classList.add('active');
+              }, 1000); // 1000ms = 1s
+            });
+          </script>        
+        
+</body>
+</html>
